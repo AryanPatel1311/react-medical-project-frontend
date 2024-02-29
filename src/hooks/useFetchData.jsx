@@ -1,6 +1,5 @@
-// useFetchData.js
 import { useEffect, useState } from "react";
-import requestWithCorsProxy from "../../src/corsProxy";
+import { token } from "../config";
 
 const useFetchData = (url) => {
   const [data, setData] = useState([]);
@@ -11,12 +10,17 @@ const useFetchData = (url) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        // Use the requestWithCorsProxy utility instead of fetch
-        const result = await requestWithCorsProxy(url, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        const res = await fetch(url, {
+          headers: { Authorization: `Bearer ${token}` },
         });
 
-        setData(result);
+        const result = await res.json();
+
+        if (!res.ok) {
+          throw new Error(result.message);
+        }
+
+        setData(result.data);
         setLoading(false);
       } catch (err) {
         setLoading(false);
@@ -26,7 +30,6 @@ const useFetchData = (url) => {
 
     fetchData();
   }, [url]);
-
   return {
     data,
     loading,
