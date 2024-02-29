@@ -1,6 +1,6 @@
 // useFetchData.js
 import { useEffect, useState } from "react";
-import requestWithCorsProxy from "./corsProxy";
+import requestWithCorsProxy from "../../src/corsProxy";
 
 const useFetchData = (url) => {
   const [data, setData] = useState([]);
