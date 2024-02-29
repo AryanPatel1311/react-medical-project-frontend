@@ -3,7 +3,6 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-// import patientAvtar from "../../assets/images/patient-avatar.png";
 import { HiStar } from "react-icons/hi";
 
 const Testimonial = () => {
