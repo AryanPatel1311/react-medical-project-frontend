@@ -4,6 +4,7 @@ import { BASE_URL } from "../config";
 import { toast } from "react-toastify";
 import { authContext } from "../context/AuthContext.jsx";
 import HashLoader from "react-spinners/HashLoader";
+import requestWithCorsProxy from "../corsProxy.js";
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -17,24 +18,20 @@ const Login = () => {
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const submitHandler = async (event) => {
     event.preventDefault();
     setLoading(true);
 
     try {
-      const res = await fetch(`${BASE_URL}/auth/login`, {
-        method: "post",
+      const result = await requestWithCorsProxy(`${BASE_URL}/auth/login`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         credentials: "include",
         body: JSON.stringify(formData),
       });
-      const result = await res.json();
-
-      if (!res.ok) {
-        throw new Error(result.message);
-      }
 
       dispatch({
         type: "LOGIN_SUCCESS",
@@ -44,7 +41,6 @@ const Login = () => {
           role: result.role,
         },
       });
-      console.log(result, "Login data");
 
       setLoading(false);
       toast.success(result.message);
