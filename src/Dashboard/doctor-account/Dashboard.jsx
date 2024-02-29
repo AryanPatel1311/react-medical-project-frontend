@@ -4,7 +4,6 @@ import Loader from "../../components/Loader/Loading";
 import { BASE_URL } from "../../config";
 import useGetProfile from "../../hooks/useFetchData";
 import Tabs from "./Tabs";
-// import starIcon from "../../assets/images/Star.png";
 import DoctorAbout from "../../pages/Doctors/DoctorAbout";
 import Profile from "./Profile";
 import Appointments from "./Appointments";

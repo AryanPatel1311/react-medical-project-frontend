@@ -1,5 +1,4 @@
 import { useState } from "react";
-import starIcon from "../../assets/images/star.png";
 import DoctorAbout from "./DoctorAbout";
 import Feedback from "./Feedback";
 import SidePanel from "./SidePanel";
