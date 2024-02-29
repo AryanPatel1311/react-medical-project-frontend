@@ -4,7 +4,7 @@ import Loader from "../../components/Loader/Loading";
 import { BASE_URL } from "../../config";
 import useGetProfile from "../../hooks/useFetchData";
 import Tabs from "./Tabs";
-import starIcon from "../../assets/images/Star.png";
+// import starIcon from "../../assets/images/Star.png";
 import DoctorAbout from "../../pages/Doctors/DoctorAbout";
 import Profile from "./Profile";
 import Appointments from "./Appointments";
@@ -63,7 +63,7 @@ const Dashboard = () => {
                         </h3>
                         <div className="flex items-center gap-[6px]">
                           <span className="flex items-center gap-[6px] text-headingColor text-[14px] leading-5 lg:text-[16px] lg:leading-6 font-semibold">
-                            <img src={starIcon} alt="" />
+                            <img src="/assets/images/Star.png" alt="" />
                             {data.averageRating}
                           </span>
                           <span className="text-textColor text-[14px] leading-5 lg:text-[16px] lg:leading-6 font-semibold">

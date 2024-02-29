@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import starIcon from "../../assets/images/Star.png";
+// import starIcon from "../../assets/images/Star.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 
@@ -21,7 +21,7 @@ const DoctorCard = ({ doctor }) => {
         </span>
         <div className="flex items-center gap-[6px]">
           <span className="flex items-center gap-[6px] text-[14px] leading-6 lg:text-[16px] lg:leading-7 font-semibold text-headingColor">
-            <img src={starIcon} alt="" className="" />
+            <img src="/assets/images/Star.png" alt="" className="" />
             {avgRating}
           </span>
           <span className="text-[14px] leading-6 lg:text-[16px] lg:leading-7 font-[400] text-textColor">

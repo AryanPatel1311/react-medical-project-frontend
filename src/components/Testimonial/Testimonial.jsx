@@ -3,7 +3,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import patientAvtar from "../../assets/images/patient-avatar.png";
+// import patientAvtar from "../../assets/images/patient-avatar.png";
 import { HiStar } from "react-icons/hi";
 
 const Testimonial = () => {
@@ -32,7 +32,11 @@ const Testimonial = () => {
         <SwiperSlide>
           <div className="py-[30px] px-5 rounded-3">
             <div className="flex items-center gap-[13px]">
-              <img src={patientAvtar} alt="" className="" />
+              <img
+                src="/assets/images/patient-avatar.png"
+                alt=""
+                className=""
+              />
               <div>
                 <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
                   Manish Patel
@@ -46,14 +50,21 @@ const Testimonial = () => {
                 </div>
               </div>
             </div>
-            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">"I have taken medical services from them. They treat so well and they are provding the best medical services."</p>
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              "I have taken medical services from them. They treat so well and
+              they are provding the best medical services."
+            </p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className="py-[30px] px-5 rounded-3">
             <div className="flex items-center gap-[13px]">
-              <img src={patientAvtar} alt="" className="" />
+              <img
+                src="/assets/images/patient-avatar.png"
+                alt=""
+                className=""
+              />
               <div>
                 <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
                   Manish Patel
@@ -67,14 +78,21 @@ const Testimonial = () => {
                 </div>
               </div>
             </div>
-            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">"I have taken medical services from them. They treat so well and they are provding the best medical services."</p>
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              "I have taken medical services from them. They treat so well and
+              they are provding the best medical services."
+            </p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className="py-[30px] px-5 rounded-3">
             <div className="flex items-center gap-[13px]">
-              <img src={patientAvtar} alt="" className="" />
+              <img
+                src="/assets/images/patient-avatar.png"
+                alt=""
+                className=""
+              />
               <div>
                 <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
                   Manish Patel
@@ -88,7 +106,10 @@ const Testimonial = () => {
                 </div>
               </div>
             </div>
-            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">"I have taken medical services from them. They treat so well and they are provding the best medical services."</p>
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              "I have taken medical services from them. They treat so well and
+              they are provding the best medical services."
+            </p>
           </div>
         </SwiperSlide>
       </Swiper>

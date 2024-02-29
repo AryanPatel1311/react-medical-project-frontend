@@ -1,7 +1,7 @@
 // import React from "react";
 import { authContext } from "./../../context/AuthContext";
 import { useContext, useState } from "react";
-import userImg from "../../assets/images/doctor-img01.png";
+// import userImg from "../../assets/images/doctor-img01.png";
 import MyBookings from "./MyBookings";
 import Profile from "./Profile";
 import useGetProfile from "../../hooks/useFetchData";
