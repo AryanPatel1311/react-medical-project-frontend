@@ -10,7 +10,7 @@ const About = () => {
           <div className="relative 3-3/4 lg:w-1/2 xl:w-[770px] z-10 order-2 lg:order-1">
             <img src="/assets/images/about.png" alt="" className="" />
             <div className="absolute z-20 bottom-4 w-[200px] md:w-[300px] right-[-30%] md:right-[-7%] lg:right-[22%] ">
-              <img src="/assets/images/about-card.png" alt="" className="" />
+              {/* <img src="/assets/images/about-card.png" alt="" className="" /> */}
             </div>
           </div>
 

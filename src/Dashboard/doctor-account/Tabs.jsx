@@ -1,25 +1,37 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { BiMenu } from "react-icons/bi";
 import { authContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+
 const Tabs = ({ tab, setTab }) => {
   const { dispatch } = useContext(authContext);
   const navigate = useNavigate();
+  const menuRef = useRef(null);
+
+  const toggleMenu = () => menuRef.current.classList.toggle("show_menu");
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
     navigate("/");
+    toggleMenu(); // Close the menu after logout
   };
+
   return (
     <div>
-      <span className="lg:hidden">
-        <BiMenu className="w-6 h-6 cursor-pointer" />
+      <span className="lg:hidden" onClick={toggleMenu}>
+        <BiMenu />
       </span>
-      <div className="hidden lg:flex flex-col p-[30px] bg-white shadow-panelShadow items-center h-max rounded-md">
+      <div
+        className="hidden lg:flex flex-col p-[30px] bg-white shadow-panelShadow items-center h-max rounded-md"
+        ref={menuRef}
+      >
         <button
-          onClick={() => setTab("overview")}
+          onClick={() => {
+            setTab("overview");
+            toggleMenu(); // Close the menu after selecting a tab
+          }}
           className={`${
-            tab == "overview"
+            tab === "overview"
               ? "bg-indigo-100 text-primaryColor"
               : "bg-transparent text-headingColor"
           } w-full btn mt-0 rounded-md`}
@@ -27,20 +39,25 @@ const Tabs = ({ tab, setTab }) => {
           Overview
         </button>
         <button
-          onClick={() => setTab("appointments")}
+          onClick={() => {
+            setTab("appointments");
+            toggleMenu(); // Close the menu after selecting a tab
+          }}
           className={`${
-            tab == "appointments"
+            tab === "appointments"
               ? "bg-indigo-100 text-primaryColor"
               : "bg-transparent text-headingColor"
           } w-full btn mt-0 rounded-md`}
         >
           Appointments
         </button>
-
         <button
-          onClick={() => setTab("settings")}
+          onClick={() => {
+            setTab("settings");
+            toggleMenu(); // Close the menu after selecting a tab
+          }}
           className={`${
-            tab == "settings"
+            tab === "settings"
               ? "bg-indigo-100 text-primaryColor"
               : "bg-transparent text-headingColor"
           } w-full btn mt-0 rounded-md`}
