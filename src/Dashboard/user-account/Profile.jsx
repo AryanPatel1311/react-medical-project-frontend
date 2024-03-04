@@ -7,7 +7,7 @@ import { BASE_URL, token } from "../../config";
 
 const Profile = ({ user }) => {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
     email: "",

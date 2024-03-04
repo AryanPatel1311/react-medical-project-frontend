@@ -37,6 +37,11 @@ const Profile = ({ doctorData }) => {
       about: doctorData?.about,
       photo: doctorData?.photo,
     });
+
+    if (!localStorage.getItem("visited")) {
+      localStorage.setItem("visited", "true");
+      window.location.reload();
+    }
   }, [doctorData]);
 
   const handleInputChange = (e) => {
