@@ -12,6 +12,8 @@ const MyBookings = () => {
     loading,
     error,
   } = useFetchData(`${BASE_URL}/users/appoinments/my-appoinments`);
+
+  console.log(appointments, "appointments");
   return (
     <div>
       {loading && <Loading />}

@@ -4,6 +4,7 @@ import React from "react";
 import formateDate from "../../utils/formateDate";
 
 const Appointments = ({ appointments }) => {
+  console.log("appoinment:", appointments);
   return (
     <table className="w-full text-left text-sm text-gray-500">
       <thead className="text-xs text-gray-700 uppercase bg-gray-50">
@@ -22,6 +23,9 @@ const Appointments = ({ appointments }) => {
           </th>
           <th scope="col" className="px-6 py-3">
             Booked On
+          </th>
+          <th scope="col" className="px-6 py-3">
+            Time
           </th>
         </tr>
       </thead>
@@ -55,13 +59,16 @@ const Appointments = ({ appointments }) => {
 
               {!item.isPaid && (
                 <div className="flex items-center">
-                  <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
                   Unpaid
                 </div>
               )}
             </td>
             <td className="px-6 py-4">{item.ticketPrice}</td>
             <td className="px-6 py-4">{formateDate(item.createdAt)}</td>
+            <td className="px-6 py-4">
+              {item.timeSlot ? item.timeSlot : "NA"}
+            </td>
           </tr>
         ))}
       </tbody>
